@@ -31,11 +31,10 @@ def romanToInt(s):
     for char in s:
         if char in m:
             count += m[char]
-        if len(prev) > 1:
+        if len(prev) >= 1:
             if char == prev:
                 continue
-            else:
-                if m[prev] < m[char]:
+            elif m[prev] < m[char]:
                     count -= 2 * m[prev]
         prev = char
     return count
